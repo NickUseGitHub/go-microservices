@@ -13,7 +13,6 @@ func Start() {
 	http.HandleFunc("/users", controllers.GetUsers)
 
 	if err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil); err != nil {
-		fmt.Println(fmt.Sprintf("Start on port:%d", port))
 		panic(err)
 	}
 }
