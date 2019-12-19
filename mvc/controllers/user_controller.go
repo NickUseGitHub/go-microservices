@@ -2,8 +2,11 @@ package controllers
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/nickUseGitHub/go-microservices/mvc/services"
 )
 
 func GetUsers(res http.ResponseWriter, req *http.Request) {
@@ -13,5 +16,6 @@ func GetUsers(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
+	log.Println(services.GetUser(userId))
 	res.Write([]byte(fmt.Sprintf("User Id naja: %d", userId)))
 }
