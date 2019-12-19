@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/nickUseGitHub/go-microservices/mvc/app"
+)
 
 func main() {
-	fmt.Println("Hello world")
+	app.Start()
 }
