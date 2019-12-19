@@ -1,7 +1,11 @@
 package controllers
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func GetUsers(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("Hello Users"))
+	userId := req.URL.Query().Get("userId")
+	res.Write([]byte(fmt.Sprintf("User Id: %s", userId)))
 }
